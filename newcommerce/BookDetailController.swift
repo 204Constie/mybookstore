@@ -11,6 +11,7 @@ import UIKit
 class BookDetailController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     private let headerId = "headerId"
+    private let cellId = "cellId"
     
     var book: Book? {
         didSet {
@@ -26,7 +27,8 @@ class BookDetailController: UICollectionViewController, UICollectionViewDelegate
         
         collectionView?.backgroundColor = UIColor.white
         collectionView?.register(BookDetailHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId)
-        
+        collectionView?.register(BookDetailDescription.self, forCellWithReuseIdentifier: cellId)
+      
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -35,10 +37,91 @@ class BookDetailController: UICollectionViewController, UICollectionViewDelegate
         return header
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: 170)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.width, height: 170)
     }
     
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! BookDetailDescription
+        
+        cell.book = book
+        
+        cell.textView.attributedText = descriptionAttributedText()
+        
+        return cell
+    }
+    
+    private func descriptionAttributedText() -> NSAttributedString {
+        let attributedString = NSMutableAttributedString(string: "Description\n", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18)])
+        
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 10
+        
+        let range  = NSMakeRange(0, attributedString.string.characters.count)
+        attributedString.addAttribute(NSParagraphStyleAttributeName, value: style, range: range)
+        
+        if let desc = book?.description_text {
+            print("desc \(desc)")
+            attributedString.append(NSMutableAttributedString(string: desc, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.darkGray]))
+        }
+        
+        return attributedString
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    
+}
+
+
+class BookDetailDescription: BaseCell {
+    
+    var book: Book? {
+        didSet {
+            if let desc = book?.description_text {
+                print("desc \(desc)")
+                textView.text = desc
+            }
+        }
+    }
+    
+    let textView: UITextView = {
+        let tv = UITextView()
+        tv.text = "sample"
+        tv.font = UIFont.systemFont(ofSize: 14)
+        return tv
+    }()
+    
+    let dividerLineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(white: 0.4, alpha: 0.4)
+        return view
+    }()
+    
+    override func setupViews() {
+        super.setupViews()
+        
+        addSubview(textView)
+        addSubview(dividerLineView)
+        
+        addConstrainsWithFormat(format: "H:|-8-[v0]-8-|", views: textView)
+        addConstrainsWithFormat(format: "V:|-4-[v0]-4-[v1(1)]|", views: textView, dividerLineView)
+        
+        addConstrainsWithFormat(format: "H:|[v0]|", views: dividerLineView)
+        
+    }
+}
+
+class Responser: NSObject {
+    func action(){
+        print("clickk")
+    }
 }
 
 
@@ -86,6 +169,7 @@ class BookDetailHeader: BaseCell {
         return label
     }()
     
+    
     let buyButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("BUY", for: .normal)
@@ -96,16 +180,22 @@ class BookDetailHeader: BaseCell {
         return button
     }()
     
+//    let buyButton: UIButton = UIButton(type: .system)
+    
     let dividerLineView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(white: 0.4, alpha: 0.4)
         return view
     }()
     
+    func handleClick(_ sender: UIButton!){
+        print("click")
+    }
+    
     override func setupViews() {
         super.setupViews()
         
-//        backgroundColor = UIColor.red
+        buyButton.addTarget(self, action: #selector(handleClick(_:)), for: .touchUpInside)
         
         addSubview(imageView)
         addSubview(segmentedControl)

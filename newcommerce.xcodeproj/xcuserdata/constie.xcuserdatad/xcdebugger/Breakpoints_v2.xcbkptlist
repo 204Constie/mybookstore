@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "newcommerce/BookDetailController.swift"
-            timestampString = "519422709.11097"
+            timestampString = "519429706.179096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "setupViews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "newcommerce/BookDetailController.swift"
-            timestampString = "519422709.11097"
+            timestampString = "519429027.528095"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "BookDetailHeader"
             landmarkType = "3">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "newcommerce/BookDetailController.swift"
-            timestampString = "519422709.11097"
+            timestampString = "519429027.528095"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "imageView"
             landmarkType = "24">
             <Locations>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "newcommerce/BookDetailController.swift"
-            timestampString = "519411708.281004"
+            timestampString = "519424431.821393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
             landmarkName = "book"
             landmarkType = "24">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "newcommerce/BookDetailController.swift"
-            timestampString = "519422709.11097"
+            timestampString = "519429027.528095"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "segmentedControl"
             landmarkType = "24">
          </BreakpointContent>
