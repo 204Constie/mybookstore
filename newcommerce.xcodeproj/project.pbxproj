@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		DE5B846D1ED2422D0015668A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5B846C1ED2422D0015668A /* AppDelegate.swift */; };
-		DE5B846F1ED2422D0015668A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5B846E1ED2422D0015668A /* ViewController.swift */; };
 		DE5B84721ED2422D0015668A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5B84701ED2422D0015668A /* Main.storyboard */; };
 		DE5B84751ED2422D0015668A /* newcommerce.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE5B84731ED2422D0015668A /* newcommerce.xcdatamodeld */; };
 		DE5B84771ED2422D0015668A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE5B84761ED2422D0015668A /* Assets.xcassets */; };
 		DE5B847A1ED2422D0015668A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5B84781ED2422D0015668A /* LaunchScreen.storyboard */; };
 		DE5B84851ED2422D0015668A /* newcommerceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5B84841ED2422D0015668A /* newcommerceTests.swift */; };
 		DE5B84901ED2422D0015668A /* newcommerceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5B848F1ED2422D0015668A /* newcommerceUITests.swift */; };
+		DE5B849E1ED242840015668A /* MyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5B849D1ED242840015668A /* MyCollectionViewController.swift */; };
+		DE5B84A21ED2429D0015668A /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5B84A11ED2429D0015668A /* Models.swift */; };
+		DE5B84A61ED243280015668A /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5B84A51ED243280015668A /* CategoryCell.swift */; };
+		DE7D418E1EF57B8100BF5B1A /* BookDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D418D1EF57B8100BF5B1A /* BookDetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,6 @@
 /* Begin PBXFileReference section */
 		DE5B84691ED2422D0015668A /* newcommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newcommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5B846C1ED2422D0015668A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE5B846E1ED2422D0015668A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DE5B84711ED2422D0015668A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE5B84741ED2422D0015668A /* newcommerce.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = newcommerce.xcdatamodel; sourceTree = "<group>"; };
 		DE5B84761ED2422D0015668A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		DE5B848B1ED2422D0015668A /* newcommerceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = newcommerceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5B848F1ED2422D0015668A /* newcommerceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newcommerceUITests.swift; sourceTree = "<group>"; };
 		DE5B84911ED2422D0015668A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE5B849D1ED242840015668A /* MyCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewController.swift; sourceTree = "<group>"; };
+		DE5B84A11ED2429D0015668A /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		DE5B84A51ED243280015668A /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		DE7D418D1EF57B8100BF5B1A /* BookDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +106,15 @@
 			isa = PBXGroup;
 			children = (
 				DE5B846C1ED2422D0015668A /* AppDelegate.swift */,
-				DE5B846E1ED2422D0015668A /* ViewController.swift */,
 				DE5B84701ED2422D0015668A /* Main.storyboard */,
 				DE5B84761ED2422D0015668A /* Assets.xcassets */,
+				DE5B84A51ED243280015668A /* CategoryCell.swift */,
 				DE5B84781ED2422D0015668A /* LaunchScreen.storyboard */,
 				DE5B847B1ED2422D0015668A /* Info.plist */,
 				DE5B84731ED2422D0015668A /* newcommerce.xcdatamodeld */,
+				DE5B849D1ED242840015668A /* MyCollectionViewController.swift */,
+				DE5B84A11ED2429D0015668A /* Models.swift */,
+				DE7D418D1EF57B8100BF5B1A /* BookDetailController.swift */,
 			);
 			path = newcommerce;
 			sourceTree = "<group>";
@@ -262,9 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE5B846F1ED2422D0015668A /* ViewController.swift in Sources */,
+				DE5B849E1ED242840015668A /* MyCollectionViewController.swift in Sources */,
+				DE7D418E1EF57B8100BF5B1A /* BookDetailController.swift in Sources */,
+				DE5B84A21ED2429D0015668A /* Models.swift in Sources */,
 				DE5B84751ED2422D0015668A /* newcommerce.xcdatamodeld in Sources */,
 				DE5B846D1ED2422D0015668A /* AppDelegate.swift in Sources */,
+				DE5B84A61ED243280015668A /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +521,7 @@
 				DE5B84961ED2422D0015668A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DE5B84971ED2422D0015668A /* Build configuration list for PBXNativeTarget "newcommerceTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +530,7 @@
 				DE5B84991ED2422D0015668A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DE5B849A1ED2422D0015668A /* Build configuration list for PBXNativeTarget "newcommerceUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +539,7 @@
 				DE5B849C1ED2422D0015668A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
