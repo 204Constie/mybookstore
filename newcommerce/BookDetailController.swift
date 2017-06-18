@@ -190,6 +190,59 @@ class BookDetailHeader: BaseCell {
     
     func handleClick(_ sender: UIButton!){
         print("click")
+        
+        let refreshAlert = UIAlertController(title: "BUY", message: "Are you sure you wanna buy?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            print("Handle Ok logic here")
+            self.makeOrder()
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Cancel Logic here")
+        }))
+        
+        UIApplication.shared.keyWindow?.rootViewController?.present(refreshAlert, animated: true, completion: nil)
+        
+//        UIViewController.present(refreshAlert, animated: true, completion: nil){}()
+//        self.present(refreshAlert, animated: true, completion: nil)
+//        presentViewController(refreshAlert, animated: true, completion: nil)
+        
+    }
+    
+    func makeOrder(){
+        let dict = ["product_id": book?.product_id ?? 0] as [String: Any]
+        if let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted) {
+            
+            
+            let url = NSURL(string: "http://localhost:8080/order")!
+            let request = NSMutableURLRequest(url: url as URL)
+            request.httpMethod = "POST"
+            
+            request.httpBody = jsonData
+            
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            let task = URLSession.shared.dataTask(with: request as URLRequest){ data,response,error in
+                if error != nil{
+                    print(error?.localizedDescription)
+                    return
+                }
+                
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                    
+                    if let parseJSON = json {
+                        let resultValue:String = parseJSON["success"] as! String;
+                        print("result: \(resultValue)")
+                        print(parseJSON)
+                    }
+                } catch let error as NSError {
+                    print(error)
+                }
+            }
+            task.resume()
+        }
     }
     
     override func setupViews() {
